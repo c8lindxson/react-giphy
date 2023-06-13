@@ -21,8 +21,7 @@ class App extends Component {
     // API call
     giphy('istUe8Sac5uRmEyLnjhjlK633CII8Hca').search({
       q: query,
-      rating: 'g',
-      limit: 10
+      rating: 'g'
     }, (error, result) => {
       // gif data
       this.setState({
@@ -39,14 +38,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div className="left-scene">
+      <div className="row d-grid">
+        <div className="left-scene col-12 col-lg-8">
           <SearchBar search={this.search} />
           <div className="selected-gif">
             <Gif id={this.state.selectedGifId} />
           </div>
         </div>
-        <div className="right-scene">
+        <div className="right-scene col-12-l8-4">
           <GifList gifs={this.state.gifs} changeSelectGif={this.changeSelectGif} />
         </div>
       </div>
